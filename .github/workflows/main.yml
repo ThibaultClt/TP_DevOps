@@ -43,20 +43,20 @@ jobs:
           # relative path to the place where source code with Dockerfile is located
           context: ./simple-api-student-main
           # Note: tags has to be all lower-case
-          tags:  ${{secrets.DOCKERHUB_USERNAME}}/tp-devops/simpleapistudent
+          tags:  ${{secrets.DOCKERHUB_USERNAME}}/simpleapistudent
 
       - name: Build image and push database
         uses: docker/build-push-action@v3
         with:
           context: ./db # Remplacez par le chemin relatif vers le code source de la base de données
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops/database
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/database
         # DO the same for database
 
       - name: Build image and push httpd
         uses: docker/build-push-action@v3
         with:
           context: ./frontend # Remplacez par le chemin relatif vers le code source d'Apache HTTP Server
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops/http
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/http
         # DO the same for httpd
 
       - name: Login to DockerHub
