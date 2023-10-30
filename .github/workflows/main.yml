@@ -19,6 +19,7 @@ jobs:
         uses: actions/setup-java@v2  # Assurez-vous d'utiliser la version correcte de l'action
         with:
           java-version: 17
+          distribution: 'adopt'
 
       #finally build your app with the latest command
       - name: Build and test with Maven
