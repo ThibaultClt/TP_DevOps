@@ -21,7 +21,7 @@ services:
 
   httpd:
     build:
-      context: ./frontend
+      context: ./devops-front-main
       dockerfile: Dockerfile
     container_name: http
     ports:
